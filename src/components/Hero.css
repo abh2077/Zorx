@@ -1,0 +1,102 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(ellipse at 20% 20%, #12151d 0%, var(--color-bg) 60%);
+  overflow: hidden;
+}
+
+.hero__mark {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: min(60vw, 720px);
+  height: min(60vw, 720px);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero__mark::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+}
+
+.hero__mark::after {
+  content: '';
+  position: absolute;
+  inset: 34%;
+  background: radial-gradient(circle, var(--color-accent-soft) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero__inner {
+  position: relative;
+  padding-top: 6rem;
+  z-index: 1;
+}
+
+.hero__eyebrow {
+  text-transform: none;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  color: var(--color-text);
+  max-width: 16ch;
+}
+
+.hero__title-line {
+  display: block;
+}
+
+.hero__tagline {
+  margin-top: 1.75rem;
+  max-width: 46ch;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  color: var(--color-text-muted);
+}
+
+.hero__actions {
+  margin-top: 2.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: var(--gutter);
+  width: 1px;
+  height: 60px;
+  background: var(--color-line-strong);
+  z-index: 1;
+}
+
+.hero__scroll span {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: scrollDrip 2.2s var(--ease) infinite;
+}
+
+@keyframes scrollDrip {
+  0% { top: 0; opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 55px; opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .hero__scroll {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+.cta {
+  position: relative;
+  padding: clamp(6rem, 12vw, 10rem) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+}
+
+.cta__bg {
+  position: absolute;
+  inset: -20% 0;
+  background: radial-gradient(ellipse at 50% 40%, var(--color-accent-soft) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta__inner {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.cta__inner h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--color-text);
+  margin-bottom: 1.1rem;
+}
+
+.cta__inner p {
+  margin-bottom: 2.25rem;
+  font-size: 1.05rem;
+}
+
+.cta__inner .btn-primary {
+  padding: 1.1rem 2.4rem;
+}
